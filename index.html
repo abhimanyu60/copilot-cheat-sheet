@@ -305,6 +305,121 @@
 
   .es-footer-note strong { font-weight: 700; }
 
+  /* PAIN POINTS SECTION */
+  .pain-section {
+    padding: 28px 40px;
+    border-top: 1px solid #eef2f7;
+    background: #fff;
+  }
+
+  .section-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+  }
+
+  .section-icon { font-size: 28px; }
+
+  .section-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; color: #0078d4; margin-bottom: 3px;
+  }
+
+  .section-title {
+    font-size: 16px; font-weight: 700; color: #1a1a2e;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .pain-category {
+    background: #f8faff;
+    border: 1px solid #e2eaf7;
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .pain-cat-title {
+    font-size: 13px; font-weight: 700; color: #0078d4;
+    margin-bottom: 12px; padding-bottom: 8px;
+    border-bottom: 1px solid #dde8f5;
+  }
+
+  .pain-item { margin-bottom: 10px; }
+  .pain-item:last-child { margin-bottom: 0; }
+
+  .pain-q {
+    font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 3px;
+  }
+
+  .pain-prompt {
+    font-size: 12px; font-style: italic; color: #1a3a5c;
+    background: #e8f3ff; border-left: 3px solid #0078d4;
+    padding: 5px 8px; border-radius: 4px; line-height: 1.5;
+  }
+
+  /* DOCUMENT SECTION */
+  .doc-section {
+    padding: 28px 40px;
+    border-top: 1px solid #eef2f7;
+    background: #fafbff;
+  }
+
+  .doc-where {
+    margin-bottom: 20px;
+  }
+
+  .doc-where-title {
+    font-size: 13px; font-weight: 700; color: #374151;
+    margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+
+  .doc-apps-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .doc-app {
+    background: white; border: 1.5px solid #e2eaf7;
+    border-radius: 10px; padding: 14px;
+  }
+
+  .doc-app-name {
+    font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px;
+  }
+
+  .doc-app-desc {
+    font-size: 12px; color: #64748b; line-height: 1.5;
+  }
+
+  .doc-prompts-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .doc-prompt-card {
+    background: white; border: 1.5px solid #e2eaf7;
+    border-radius: 10px; padding: 14px;
+  }
+
+  .doc-prompt-type {
+    font-size: 12px; font-weight: 700; color: #0078d4;
+    margin-bottom: 8px;
+  }
+
+  .doc-prompt-text {
+    font-size: 12.5px; font-style: italic; color: #1a3a5c;
+    background: #e8f3ff; border-left: 3px solid #0078d4;
+    padding: 8px 10px; border-radius: 5px; line-height: 1.55;
+  }
+
+  .doc-tip {
+    background: #fffbeb; border: 1.5px solid #fde68a;
+    border-radius: 8px; padding: 12px 16px;
+    font-size: 13px; color: #78350f; line-height: 1.6;
+  }
+
   @media print {
     body { background: white; padding: 0; }
     .page { box-shadow: none; border-radius: 0; }
@@ -473,6 +588,161 @@
 
     <div class="es-footer-note">
       💬 <strong>Try it yourself:</strong> Open any long email thread in Outlook → Click the Copilot icon → Type the prompt above.
+    </div>
+  </div>
+
+  <!-- PAIN POINTS SECTION -->
+  <div class="pain-section">
+    <div class="section-header">
+      <span class="section-icon">😓</span>
+      <div>
+        <div class="section-label">Common Manager Pain Points</div>
+        <div class="section-title">Which problem do you face most? Find your prompt below.</div>
+      </div>
+    </div>
+
+    <div class="pain-grid">
+
+      <div class="pain-category">
+        <div class="pain-cat-title">⏰ Time &amp; Productivity</div>
+        <div class="pain-item">
+          <div class="pain-q">Drowning in emails</div>
+          <div class="pain-prompt">"Summarize this thread and tell me what I need to do."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">No time after meetings</div>
+          <div class="pain-prompt">"Turn these notes into action items with owners and deadlines."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Prepping on Sunday nights</div>
+          <div class="pain-prompt">"Draft my Monday morning update based on these bullet points."</div>
+        </div>
+      </div>
+
+      <div class="pain-category">
+        <div class="pain-cat-title">✍️ Writing &amp; Communication</div>
+        <div class="pain-item">
+          <div class="pain-q">Blank page, don't know how to start</div>
+          <div class="pain-prompt">"Write a first draft of [report/email/update] based on: [notes]."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Wording a sensitive message</div>
+          <div class="pain-prompt">"Help me write this feedback message professionally and constructively."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Same update, every week</div>
+          <div class="pain-prompt">"Use last week's format and update with these new numbers: [data]."</div>
+        </div>
+      </div>
+
+      <div class="pain-category">
+        <div class="pain-cat-title">📚 Information Overload</div>
+        <div class="pain-item">
+          <div class="pain-q">Long report, no time to read</div>
+          <div class="pain-prompt">"Summarize this document. What do I need to act on?"</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Coming back from leave</div>
+          <div class="pain-prompt">"I was away for a week. Summarize what happened in this Teams channel."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Too many chat threads to track</div>
+          <div class="pain-prompt">"What decisions were made in this conversation? List any open items."</div>
+        </div>
+      </div>
+
+      <div class="pain-category">
+        <div class="pain-cat-title">👥 People &amp; Team Management</div>
+        <div class="pain-item">
+          <div class="pain-q">Preparing for a performance talk</div>
+          <div class="pain-prompt">"Help me structure a performance conversation for someone who [situation]."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Writing a job description</div>
+          <div class="pain-prompt">"Write a JD for a [role] on my team. Key skills needed: [list]."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Recognising the team</div>
+          <div class="pain-prompt">"Write a team shoutout message for [achievement]. Keep it warm and genuine."</div>
+        </div>
+      </div>
+
+      <div class="pain-category">
+        <div class="pain-cat-title">🗓️ Meetings</div>
+        <div class="pain-item">
+          <div class="pain-q">Walking in unprepared</div>
+          <div class="pain-prompt">"I have a meeting on [topic]. What questions should I be ready for?"</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Notes taken badly</div>
+          <div class="pain-prompt">"Clean up these rough notes into a proper meeting summary."</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-q">Action items getting lost</div>
+          <div class="pain-prompt">"From these meeting notes, list all action items, owners, and due dates."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOCUMENT PROMPTING SECTION -->
+  <div class="doc-section">
+    <div class="section-header">
+      <span class="section-icon">📎</span>
+      <div>
+        <div class="section-label">Working with Documents</div>
+        <div class="section-title">How to upload a file and get answers from it</div>
+      </div>
+    </div>
+
+    <div class="doc-where">
+      <div class="doc-where-title">Where to upload your document</div>
+      <div class="doc-apps-row">
+        <div class="doc-app">
+          <div class="doc-app-name">📘 Word</div>
+          <div class="doc-app-desc">Open the doc → click the Copilot icon on the right panel → chat with your document directly</div>
+        </div>
+        <div class="doc-app">
+          <div class="doc-app-name">💬 Teams / Outlook</div>
+          <div class="doc-app-desc">Attach the file → then type your prompt below it, just like messaging a colleague</div>
+        </div>
+        <div class="doc-app">
+          <div class="doc-app-name">🤖 Copilot Chat</div>
+          <div class="doc-app-desc">Go to copilot.microsoft.com → click the paperclip → upload PDF, Word, or PowerPoint</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="doc-prompts-grid">
+      <div class="doc-prompt-card">
+        <div class="doc-prompt-type">📄 Any Document</div>
+        <div class="doc-prompt-text">"Summarize this document in 5 bullet points and highlight what I need to decide."</div>
+      </div>
+      <div class="doc-prompt-card">
+        <div class="doc-prompt-type">🔄 Workflow / Process Doc</div>
+        <div class="doc-prompt-text">"This document has a process flow. Explain each step simply and flag any gaps or risks."</div>
+      </div>
+      <div class="doc-prompt-card">
+        <div class="doc-prompt-type">🖼️ Doc with Images or Diagrams</div>
+        <div class="doc-prompt-text">"The document contains a diagram showing [brief description]. Based on the full document, explain what this process means for my team."</div>
+      </div>
+      <div class="doc-prompt-card">
+        <div class="doc-prompt-type">📊 Report with Data</div>
+        <div class="doc-prompt-text">"What are the 3 most important takeaways from this report? What action should I take?"</div>
+      </div>
+      <div class="doc-prompt-card">
+        <div class="doc-prompt-type">📋 SOP / Policy Doc</div>
+        <div class="doc-prompt-text">"Turn this SOP into a simple checklist my team can follow."</div>
+      </div>
+      <div class="doc-prompt-card">
+        <div class="doc-prompt-type">🆚 Comparing Two Docs</div>
+        <div class="doc-prompt-text">"I've uploaded two versions of this document. What has changed? Summarize the key differences."</div>
+      </div>
+    </div>
+
+    <div class="doc-tip">
+      <strong>💡 Tip for docs with images:</strong> Copilot can read flowcharts and diagrams but may not always see every image clearly. If it misses something, just describe the image briefly in your prompt — <em>"The diagram shows a 4-step approval process..."</em> — and Copilot will factor it in.
     </div>
   </div>
 
