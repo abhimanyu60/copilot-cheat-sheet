@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M365 Copilot – Manager Cheat Sheet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f4ff;
+    padding: 24px;
+    color: #1a1a2e;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 60%, #005a9e 100%);
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left h1 {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .header-left p {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .header-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  /* TAGLINE STRIP */
+  .tagline {
+    background: #e8f3ff;
+    border-left: 4px solid #0078d4;
+    padding: 14px 40px;
+    font-size: 14px;
+    color: #005a9e;
+    font-weight: 500;
+  }
+
+  .tagline span {
+    font-weight: 700;
+  }
+
+  /* MAIN GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .card {
+    padding: 24px 28px;
+    border-bottom: 1px solid #eef2f7;
+    border-right: 1px solid #eef2f7;
+  }
+
+  .card:nth-child(even) {
+    border-right: none;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .emoji {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .situation {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+
+  .scenario {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+  }
+
+  .prompt-box {
+    background: #f8faff;
+    border: 1.5px solid #d0e4f7;
+    border-left: 4px solid #0078d4;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .prompt-box p {
+    font-size: 13.5px;
+    color: #1a3a5c;
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  .prompt-box .placeholder {
+    color: #0078d4;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* TIP BAR */
+  .tip-bar {
+    background: #fff8e7;
+    border-top: 1px solid #ffe9a0;
+    padding: 16px 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tip-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .tip-content strong {
+    font-size: 13px;
+    color: #92620a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .tip-content p {
+    font-size: 13px;
+    color: #6b4c0f;
+    line-height: 1.5;
+  }
+
+  /* GOLDEN RULE */
+  .golden-rule {
+    background: linear-gradient(135deg, #0078d4, #005a9e);
+    padding: 22px 40px;
+    text-align: center;
+  }
+
+  .golden-rule p {
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .golden-rule h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #f8fafc;
+    border-top: 1px solid #eef2f7;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+
+  .footer-apps {
+    display: flex;
+    gap: 16px;
+  }
+
+  .app-pill {
+    background: #e8f3ff;
+    color: #0078d4;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
+
+  /* EXAMPLE SESSION */
+  .example-session {
+    padding: 28px 40px;
+    border-top: 1px solid #eef2f7;
+    background: #fafbff;
+  }
+
+  .es-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .es-icon { font-size: 28px; }
+
+  .es-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0078d4;
+    margin-bottom: 3px;
+  }
+
+  .es-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .es-flow { display: flex; flex-direction: column; gap: 4px; }
+
+  .es-step { display: flex; gap: 14px; align-items: flex-start; }
+
+  .es-step-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+    padding-top: 12px;
+  }
+
+  .es-num {
+    width: 24px; height: 24px;
+    background: #0078d4; color: white;
+    border-radius: 50%; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .es-step-label span:last-child {
+    font-size: 12px; font-weight: 600; color: #64748b;
+    text-transform: uppercase; letter-spacing: 0.4px;
+  }
+
+  .es-bubble { flex: 1; border-radius: 10px; padding: 14px 16px; font-size: 13.5px; line-height: 1.6; }
+
+  .situation-bubble { background: #f1f5f9; border: 1px solid #e2e8f0; color: #374151; }
+
+  .prompt-bubble {
+    background: #e8f3ff; border: 1.5px solid #bfdbfe;
+    border-left: 4px solid #0078d4; color: #1a3a5c; font-style: italic; font-weight: 500;
+  }
+
+  .response-bubble {
+    background: #f0fdf4; border: 1.5px solid #bbf7d0;
+    border-left: 4px solid #16a34a; color: #14532d;
+  }
+
+  .response-tag {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.6px; color: #16a34a; margin-bottom: 6px;
+  }
+
+  .result-bubble { background: #fffbeb; border: 1.5px solid #fde68a; color: #78350f; }
+
+  .es-arrow { text-align: left; padding-left: 214px; color: #cbd5e1; font-size: 18px; line-height: 1; margin: 2px 0; }
+
+  .es-footer-note {
+    margin-top: 18px; background: #e8f3ff;
+    border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #1a3a5c;
+  }
+
+  .es-footer-note strong { font-weight: 700; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>M365 Copilot — Manager Quick Guide</h1>
+      <p>Your 6 essential prompts for everyday work</p>
+    </div>
+    <div class="header-badge">✦ Keep this handy</div>
+  </div>
+
+  <!-- TAGLINE -->
+  <div class="tagline">
+    💡 <span>No training needed.</span> Just describe what you need — like you're talking to a smart assistant.
+  </div>
+
+  <!-- CARDS GRID -->
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">📧</span>
+        <span class="situation">Email overload</span>
+      </div>
+      <div class="scenario">Too many emails to read?</div>
+      <div class="prompt-box">
+        <p>"Summarize this email thread and tell me <span class="placeholder">what action is needed from me</span>."</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">📝</span>
+        <span class="situation">After meetings</span>
+      </div>
+      <div class="scenario">Left a meeting with messy notes?</div>
+      <div class="prompt-box">
+        <p>"Summarize these notes and list the <span class="placeholder">key decisions and action items</span> with owners."</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">📄</span>
+        <span class="situation">Blank page problem</span>
+      </div>
+      <div class="scenario">Need to write a report or update?</div>
+      <div class="prompt-box">
+        <p>"Draft a <span class="placeholder">weekly status update</span> based on these points: [paste your notes]."</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">🎯</span>
+        <span class="situation">Meeting prep</span>
+      </div>
+      <div class="scenario">Walking into a tough meeting?</div>
+      <div class="prompt-box">
+        <p>"I have a meeting about <span class="placeholder">[topic]</span>. What questions should I be prepared for?"</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">✍️</span>
+        <span class="situation">Tricky emails</span>
+      </div>
+      <div class="scenario">Not sure how to word something?</div>
+      <div class="prompt-box">
+        <p>"Rewrite this email to sound more <span class="placeholder">professional / direct / friendly</span>: [paste email]."</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="emoji">📑</span>
+        <span class="situation">Long documents</span>
+      </div>
+      <div class="scenario">Got a report you need to digest fast?</div>
+      <div class="prompt-box">
+        <p>"Explain this document in simple terms and <span class="placeholder">flag anything I should act on</span>."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TIP BAR -->
+  <div class="tip-bar">
+    <span class="tip-icon">🔧</span>
+    <div class="tip-content">
+      <strong>Pro Tip — Be specific, get better results</strong>
+      <p>Instead of <em>"write an update"</em> → try <em>"write a 5-line update for my VP on the Q2 budget review, keeping the tone confident."</em> The more context you give, the better Copilot performs.</p>
+    </div>
+  </div>
+
+  <!-- EXAMPLE SESSION -->
+  <div class="example-session">
+    <div class="es-header">
+      <span class="es-icon">🎬</span>
+      <div>
+        <div class="es-label">Live Example</div>
+        <div class="es-title">See it in action — Email overload scenario</div>
+      </div>
+    </div>
+
+    <div class="es-flow">
+
+      <div class="es-step">
+        <div class="es-step-label">
+          <span class="es-num">1</span>
+          <span>The Situation</span>
+        </div>
+        <div class="es-bubble situation-bubble">
+          <p>It's Monday morning. You have 47 unread emails. You spot a long thread from Friday titled <strong>"Re: Re: Re: Q3 Budget Review – Action Required"</strong> with 12 replies. You have a leadership call in 20 minutes.</p>
+        </div>
+      </div>
+
+      <div class="es-arrow">↓</div>
+
+      <div class="es-step">
+        <div class="es-step-label">
+          <span class="es-num">2</span>
+          <span>What you type into Copilot</span>
+        </div>
+        <div class="es-bubble prompt-bubble">
+          <p>"Summarize this email thread and tell me what action is needed from me."</p>
+        </div>
+      </div>
+
+      <div class="es-arrow">↓</div>
+
+      <div class="es-step">
+        <div class="es-step-label">
+          <span class="es-num">3</span>
+          <span>What Copilot gives you (in seconds)</span>
+        </div>
+        <div class="es-bubble response-bubble">
+          <div class="response-tag">Copilot Response</div>
+          <p><strong>Summary:</strong> The team is debating a 15% cut to the Q3 marketing budget. Finance wants a decision by EOD Monday. Sarah has proposed two options and is waiting for your approval.</p>
+          <p style="margin-top:8px"><strong>Action needed from you:</strong> Review Sarah's two options (attached in her 3rd reply) and reply with your preferred choice before 5 PM today.</p>
+        </div>
+      </div>
+
+      <div class="es-arrow">↓</div>
+
+      <div class="es-step">
+        <div class="es-step-label">
+          <span class="es-num">4</span>
+          <span>The result</span>
+        </div>
+        <div class="es-bubble result-bubble">
+          <p>✅ You walked into your leadership call <strong>fully briefed in under 60 seconds</strong> — instead of scrambling through 12 emails.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="es-footer-note">
+      💬 <strong>Try it yourself:</strong> Open any long email thread in Outlook → Click the Copilot icon → Type the prompt above.
+    </div>
+  </div>
+
+  <!-- GOLDEN RULE -->
+  <div class="golden-rule">
+    <p>Remember this</p>
+    <h2>"Copilot won't replace you. But someone using it well might outpace you."</h2>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Works across your M365 apps →</p>
+    <div class="footer-apps">
+      <span class="app-pill">Outlook</span>
+      <span class="app-pill">Teams</span>
+      <span class="app-pill">Word</span>
+      <span class="app-pill">PowerPoint</span>
+      <span class="app-pill">Excel</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
