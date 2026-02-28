@@ -420,6 +420,130 @@
     font-size: 13px; color: #78350f; line-height: 1.6;
   }
 
+  /* HEADER STATS */
+  .header-stats {
+    display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.35);
+    color: white; font-size: 12px; font-weight: 600;
+    padding: 5px 12px; border-radius: 14px;
+  }
+
+  /* HOW TO USE BAR */
+  .how-to-bar {
+    background: #1a1a2e; padding: 16px 40px;
+  }
+  .how-to-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.6px; color: #94a3b8; margin-bottom: 10px;
+  }
+  .how-to-steps {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .how-to-step {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: #e2e8f0;
+  }
+  .how-num {
+    width: 22px; height: 22px; background: #0078d4; color: white;
+    border-radius: 50%; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .how-to-arrow {
+    color: #475569; font-size: 16px; font-weight: 700;
+  }
+
+  /* WORKS VS DOESN'T */
+  .works-section {
+    padding: 28px 40px; border-top: 1px solid #eef2f7; background: white;
+  }
+  .works-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .works-col {
+    border-radius: 12px; padding: 20px;
+  }
+  .works-yes {
+    background: #f0fdf4; border: 1.5px solid #bbf7d0;
+  }
+  .works-no {
+    background: #fff5f5; border: 1.5px solid #fecaca;
+  }
+  .works-col-title {
+    font-size: 13px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.08);
+    color: #1a1a2e;
+  }
+  .works-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 10px; font-size: 13px; color: #374151; line-height: 1.5;
+  }
+  .works-item:last-child { margin-bottom: 0; }
+  .works-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  /* GOVERNANCE */
+  .gov-section {
+    padding: 20px 40px; background: #1a1a2e; border-top: 1px solid #2d3748;
+  }
+  .gov-header {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; color: #94a3b8;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    margin-bottom: 14px;
+  }
+  .gov-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .gov-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 12px 14px;
+    font-size: 13px; color: #cbd5e1; line-height: 1.5;
+  }
+  .gov-icon {
+    font-size: 18px; flex-shrink: 0;
+  }
+  .gov-item strong { color: #e2e8f0; }
+
+  /* CALL TO ACTION */
+  .cta-section {
+    padding: 32px 40px; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+    text-align: center;
+  }
+  .cta-badge {
+    display: inline-block; background: #0078d4; color: white;
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; padding: 5px 14px; border-radius: 14px; margin-bottom: 12px;
+  }
+  .cta-title {
+    color: white; font-size: 20px; font-weight: 800; margin-bottom: 24px;
+  }
+  .cta-steps {
+    display: flex; align-items: flex-start; justify-content: center;
+    gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+  }
+  .cta-step {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 14px 16px; max-width: 160px; text-align: center;
+  }
+  .cta-step-num {
+    width: 28px; height: 28px; background: #0078d4; color: white;
+    border-radius: 50%; font-size: 13px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 8px;
+  }
+  .cta-step-text {
+    font-size: 12.5px; color: #e2e8f0; line-height: 1.5;
+  }
+  .cta-step-text em { color: #93c5fd; font-style: italic; }
+  .cta-divider {
+    color: #475569; font-size: 20px; font-weight: 700; padding-top: 28px;
+  }
+  .cta-note {
+    font-size: 13px; color: #64748b; font-style: italic;
+  }
+
   @media print {
     body { background: white; padding: 0; }
     .page { box-shadow: none; border-radius: 0; }
@@ -434,9 +558,25 @@
   <div class="header">
     <div class="header-left">
       <h1>M365 Copilot — Manager Quick Guide</h1>
-      <p>Your 6 essential prompts for everyday work</p>
+      <p>For People Managers &amp; Delivery Managers who want to save time without learning new tech</p>
+      <div class="header-stats">
+        <div class="stat-pill">⏱ Saves 120-240 min/week on average</div>
+        <div class="stat-pill">👥 Your peers are already using this</div>
+      </div>
     </div>
     <div class="header-badge">✦ Keep this handy</div>
+  </div>
+
+  <!-- HOW TO USE THIS PAGE -->
+  <div class="how-to-bar">
+    <div class="how-to-title">📖 How to use this page — 3 steps</div>
+    <div class="how-to-steps">
+      <div class="how-to-step"><span class="how-num">1</span> Pick one pain point that you face this week</div>
+      <div class="how-to-arrow">→</div>
+      <div class="how-to-step"><span class="how-num">2</span> Copy the prompt next to it</div>
+      <div class="how-to-arrow">→</div>
+      <div class="how-to-step"><span class="how-num">3</span> Paste it into Copilot and try it once — takes under 2 minutes</div>
+    </div>
   </div>
 
   <!-- TAGLINE -->
@@ -744,6 +884,91 @@
     <div class="doc-tip">
       <strong>💡 Tip for docs with images:</strong> Copilot can read flowcharts and diagrams but may not always see every image clearly. If it misses something, just describe the image briefly in your prompt — <em>"The diagram shows a 4-step approval process..."</em> — and Copilot will factor it in.
     </div>
+  </div>
+
+  <!-- WHERE IT WORKS VS DOESN'T -->
+  <div class="works-section">
+    <div class="section-header">
+      <span class="section-icon">⚖️</span>
+      <div>
+        <div class="section-label">Set Your Expectations Right</div>
+        <div class="section-title">Where Copilot works well — and where it doesn't</div>
+      </div>
+    </div>
+    <div class="works-grid">
+      <div class="works-col works-yes">
+        <div class="works-col-title">✅ Copilot is great at...</div>
+        <div class="works-item"><span class="works-icon">📝</span><div><strong>Summarising</strong> — Long emails, threads, reports, documents</div></div>
+        <div class="works-item"><span class="works-icon">✍️</span><div><strong>Drafting</strong> — First versions of emails, updates, announcements</div></div>
+        <div class="works-item"><span class="works-icon">📋</span><div><strong>Extracting actions</strong> — Pulling tasks, owners, deadlines from text</div></div>
+        <div class="works-item"><span class="works-icon">🔄</span><div><strong>Reformatting</strong> — Changing tone, length, or structure of content</div></div>
+        <div class="works-item"><span class="works-icon">❓</span><div><strong>Preparing questions</strong> — Anticipating what others might ask</div></div>
+        <div class="works-item"><span class="works-icon">📑</span><div><strong>Creating checklists</strong> — Turning documents into step-by-step guides</div></div>
+      </div>
+      <div class="works-col works-no">
+        <div class="works-col-title">❌ Don't rely on Copilot for...</div>
+        <div class="works-item"><span class="works-icon">🧠</span><div><strong>Final decisions</strong> — It gives options, not answers. You decide.</div></div>
+        <div class="works-item"><span class="works-icon">🤝</span><div><strong>People judgment</strong> — Reading the room, team dynamics, culture</div></div>
+        <div class="works-item"><span class="works-icon">🔒</span><div><strong>Undocumented context</strong> — It only knows what's in the conversation</div></div>
+        <div class="works-item"><span class="works-icon">⚠️</span><div><strong>Sensitive HR matters</strong> — Always involve HR for formal cases</div></div>
+        <div class="works-item"><span class="works-icon">📊</span><div><strong>Real-time data</strong> — It doesn't pull live systems or databases</div></div>
+        <div class="works-item"><span class="works-icon">✔️</span><div><strong>Self-verification</strong> — Always review before sending or sharing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOVERNANCE / RESPONSIBLE USE -->
+  <div class="gov-section">
+    <div class="gov-header">
+      <span>🛡️</span>
+      <strong>Responsible Use — Quick Reminders</strong>
+    </div>
+    <div class="gov-grid">
+      <div class="gov-item">
+        <div class="gov-icon">👤</div>
+        <div><strong>You are the decision-maker.</strong> Copilot assists — it never replaces your judgment.</div>
+      </div>
+      <div class="gov-item">
+        <div class="gov-icon">👁️</div>
+        <div><strong>Always review before sending.</strong> Treat every output as a first draft, not a final one.</div>
+      </div>
+      <div class="gov-item">
+        <div class="gov-icon">🔐</div>
+        <div><strong>Mind what you share.</strong> Don't paste confidential data or personal information into prompts.</div>
+      </div>
+      <div class="gov-item">
+        <div class="gov-icon">📣</div>
+        <div><strong>Be transparent.</strong> If Copilot helped write something you're sharing, that's fine — just know what's in it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALL TO ACTION -->
+  <div class="cta-section">
+    <div class="cta-badge">🚀 Your 2-Minute Challenge</div>
+    <h2 class="cta-title">Do this today — before your next meeting</h2>
+    <div class="cta-steps">
+      <div class="cta-step">
+        <div class="cta-step-num">1</div>
+        <div class="cta-step-text">Open Outlook or Teams</div>
+      </div>
+      <div class="cta-divider">→</div>
+      <div class="cta-step">
+        <div class="cta-step-num">2</div>
+        <div class="cta-step-text">Find a long email thread or a doc you've been putting off</div>
+      </div>
+      <div class="cta-divider">→</div>
+      <div class="cta-step">
+        <div class="cta-step-num">3</div>
+        <div class="cta-step-text">Click the Copilot icon and type: <em>"Summarize this and tell me what action I need to take."</em></div>
+      </div>
+      <div class="cta-divider">→</div>
+      <div class="cta-step">
+        <div class="cta-step-num">4</div>
+        <div class="cta-step-text">See the result. That's it. You've started.</div>
+      </div>
+    </div>
+    <div class="cta-note">Share what worked with your team — the best prompts spread fast.</div>
   </div>
 
   <!-- GOLDEN RULE -->
